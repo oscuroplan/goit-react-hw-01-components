@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import css from './FriendList.module.css';
+import s from './FriendList.module.css';
 import FriendListItem from './FriendListItem';
 
 export default function FriendList({ friends }) {
   return (
-    <ul className={css.friendList}>
-      {friends.map(friend => (
+    <ul className={s.friendList}>
+      {friends.map(({ id, avatar, name, isOnline }) => (
         <FriendListItem
-          key={friend.id}
-          avatar={friend.avatar}
-          name={friend.name}
-          isOnline={friend.isOnline}
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
         />
       ))}
     </ul>
